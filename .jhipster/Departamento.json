@@ -1,0 +1,37 @@
+{
+  "applications": ["macavi"],
+  "changelogDate": "20221208183605",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "departamento",
+  "fields": [
+    {
+      "fieldName": "nombreDepartamento",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "75"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Departamento",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ciudad",
+      "otherEntityRelationshipName": "departamento",
+      "relationshipName": "ciudad",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "nombrePais",
+      "otherEntityName": "pais",
+      "otherEntityRelationshipName": "departamento",
+      "relationshipName": "pais",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}
