@@ -1,0 +1,37 @@
+{
+  "applications": ["macavi"],
+  "changelogDate": "20221209151021",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "ciudad",
+  "fields": [
+    {
+      "fieldName": "nombreCiudad",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "75"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Ciudad",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "locate",
+      "relationshipName": "cliente",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "nombreDepartamento",
+      "otherEntityName": "departamento",
+      "otherEntityRelationshipName": "ciudad",
+      "relationshipName": "departamento",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}
